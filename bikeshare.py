@@ -18,7 +18,7 @@ def filters():
         str (day): number of the day, or all to apply no filter
         str (weekday): name of the day, or all or '' to apply no filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello there! Let\'s explore some US bikeshare data!')
     list_cities = ['chi','nyc','wsh','all','']
     while True:
         city = input('\nWhich City do you want to analyse?: \n\n'
@@ -28,7 +28,11 @@ def filters():
             'ALL or leave empty for all three cities\n'
             ).lower()
         if city in list_cities:
-            break
+            if city in ['all','']:
+                print('All three Cities have been selected')
+                break
+            else:
+                break
         else:
             print('\nPlease give correct abbreviation\n')
 
