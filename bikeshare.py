@@ -210,7 +210,7 @@ def user_types(df):
 def gender(df,city):
     if city == 'chi' or city == 'nyc':
         gender_counts= df['Gender'].value_counts()
-        print('\nThe counts of each gender are:\n',gender_counts)
+        print('\nThe counts of each gender (m/f/na) are:\n',gender_counts)
 #USER BIRTH
 def birth(df,city):
     if city == 'chi' or city == 'nyc':
