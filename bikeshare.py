@@ -9,6 +9,7 @@ cwd = os.getcwd()
 def filters():
     """
     Sets filters for city, month, day and weekday - or select all
+    You also get a printed feedback if you select all
 
     Args:
         Non
