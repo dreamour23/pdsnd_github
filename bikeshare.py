@@ -9,6 +9,7 @@ cwd = os.getcwd()
 def filters():
     """
     Sets filters for city, month, day and weekday - or select all
+    You also get a printed feedback if you select all
 
     Args:
         Non
@@ -18,7 +19,7 @@ def filters():
         str (day): number of the day, or all to apply no filter
         str (weekday): name of the day, or all or '' to apply no filter
     """
-    print('Hello! Let\'s explore some US bikeshare data!')
+    print('Hello there! Let\'s explore some US bikeshare data!')
     list_cities = ['chi','nyc','wsh','all','']
     while True:
         city = input('\nWhich City do you want to analyse?: \n\n'
@@ -28,7 +29,11 @@ def filters():
             'ALL or leave empty for all three cities\n'
             ).lower()
         if city in list_cities:
-            break
+            if city in ['all','']:
+                print('All three Cities have been selected')
+                break
+            else:
+                break
         else:
             print('\nPlease give correct abbreviation\n')
 
@@ -205,7 +210,7 @@ def user_types(df):
 def gender(df,city):
     if city == 'chi' or city == 'nyc':
         gender_counts= df['Gender'].value_counts()
-        print('\nThe counts of each gender are:\n',gender_counts)
+        print('\nThe counts of each gender (m/f/na) are:\n',gender_counts)
 #USER BIRTH
 def birth(df,city):
     if city == 'chi' or city == 'nyc':
